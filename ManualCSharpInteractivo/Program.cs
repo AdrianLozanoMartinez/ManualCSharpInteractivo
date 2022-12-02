@@ -42,6 +42,8 @@
                         case "exit":
                         case "salir":
                             exit = true;
+                            Console.WriteLine("\nPulse intro para salir");
+                            Console.ReadLine();
                             break;
                         default:
                             Show();
@@ -98,6 +100,8 @@
                         case "exit":
                         case "salir":
                             exit = true;
+                            Console.WriteLine("\nPulse intro para salir");
+                            Console.ReadLine();
                             break;
                         default:
                             Show();
@@ -155,6 +159,8 @@
                         case "exit":
                         case "salir":
                             exit = true;
+                            Console.WriteLine("\nPress enter to exit");
+                            Console.ReadLine();
                             break;
                         default:
                             Show();
