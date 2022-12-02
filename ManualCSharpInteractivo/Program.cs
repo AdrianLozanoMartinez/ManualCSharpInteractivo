@@ -11,7 +11,7 @@
             Console.Clear();
             Console.WriteLine("Manual C# Interactivo - Adrián Lozano Martínez\n----------------------------------------------\n");
         }
-
+        //LO QUE SE META EN TECLADO MEDIANTE REPLACE Y BUCLE FOR QUITAR LAS TILDES Y LA Ñ POR N PARA EVITAR ERRORES EN ESPAÑOL/INGLÉS
         static void SelectLanguage()
         {
             bool exit = false;
