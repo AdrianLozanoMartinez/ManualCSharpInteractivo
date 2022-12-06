@@ -1,4 +1,6 @@
-﻿namespace ManualCSharpInteractivo
+﻿using System;
+
+namespace ManualCSharpInteractivo
 {
     internal class Program
     {
@@ -11,7 +13,36 @@
             Console.Clear();
             Console.WriteLine("Manual C# Interactivo - Adrián Lozano Martínez\n----------------------------------------------\n");
         }
-        //LO QUE SE META EN TECLADO MEDIANTE REPLACE Y BUCLE FOR QUITAR LAS TILDES Y LA Ñ POR N PARA EVITAR ERRORES EN ESPAÑOL/INGLÉS
+        static string ControlLanguage()
+        {
+            string select = Console.ReadLine().ToLower().Trim();
+
+            for (int i = 0; i < select.Length; i++)
+            {
+                switch (select[i])
+                {
+                    case 'á':
+                        select = select.Replace('á', 'a');
+                        break;
+                    case 'é':
+                        select = select.Replace('é', 'e');
+                        break;
+                    case 'í':
+                        select = select.Replace('í', 'i');
+                        break;
+                    case 'ó':
+                        select = select.Replace('ó', 'o');
+                        break;
+                    case 'ú':
+                        select = select.Replace('ú', 'u');
+                        break;
+                    case 'ñ':
+                        select = select.Replace('ñ', 'n');
+                        break;
+                }
+            }
+            return select;
+        }
         static void SelectLanguage()
         {
             bool exit = false;
@@ -21,26 +52,22 @@
             {
                 try
                 {
-                    string select = Console.ReadLine().ToLower().Trim();
-
+                    string select = ControlLanguage();
                     switch (select)
                     {
                         case "1":
-                        case "español":
                         case "espanol":
                             SelectMenu();
                             exit = true;
                             break;
                         case "2":
-                        case "ingles":
-                        case "inglés":
                         case "english":
                             SelectMenuEnglish();
                             exit = true;
                             break;
                         case "x":
-                        case "exit":
                         case "salir":
+                        case "exit":
                             exit = true;
                             Console.WriteLine("\nPulse intro para salir");
                             Console.ReadLine();
@@ -71,7 +98,7 @@
             {
                 try
                 {
-                    string select = Console.ReadLine().ToLower().Trim();
+                    string select = ControlLanguage();
 
                     switch (select)
                     {
@@ -92,12 +119,10 @@
                             break;
                         case "0":
                         case "atras":
-                        case "atrás":
                             SelectLanguage();
                             exit = true;
                             break;
                         case "x":
-                        case "exit":
                         case "salir":
                             exit = true;
                             Console.WriteLine("\nPulse intro para salir");
@@ -131,7 +156,7 @@
             {
                 try
                 {
-                    string select = Console.ReadLine().ToLower().Trim();
+                    string select = ControlLanguage();
 
                     switch (select)
                     {
